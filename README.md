@@ -1,4 +1,4 @@
-# Anonimizacion-datos-salud-NA
+# Anonimizacion-datos-salud
 # 1 Creación del dataset simulado
 Mediante este dataset se realiza  un ejmplo de la simulación de anonimización que pueden ser aplicados posteriormente a los campos reales de la salud. 
 Como primer paso se tiene la creación un DataFrame con información médica simulada de 10 pacientes, con los siguientes campos:
