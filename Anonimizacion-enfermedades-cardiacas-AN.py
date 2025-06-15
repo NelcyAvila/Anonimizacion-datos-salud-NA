@@ -2,7 +2,7 @@
 import pandas as pd
 
 #1. Creamos un DataFrame simulado
-##El dataFrame contiene diagnósticos de enfermedades cardíacas en hombres y mujeres entre 23 a 54 años de edad.
+### El dataFrame contiene diagnósticos de enfermedades cardíacas en hombres y mujeres entre 23 a 54 años de edad.
 data = {
     "ID": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     "Edad": [34, 45, 23, 54, 31, 29, 40, 33, 27, 38],
@@ -35,7 +35,7 @@ df["Edad"] = df["Edad"].astype(str)
 df["Género"] = df["Género"].astype(str)
 df["Código_Postal"] = df["Código_Postal"].astype(str)
 
-## Marcamos los cuasi-identificadores
+### Marcamos los cuasi-identificadores
 quasi_identificadores = ["Edad", "Género", "Código_Postal"]
 
 ### Mostramos el dataset ya limpio y preparado
@@ -94,20 +94,20 @@ print(grupos_no_ldiversos)
 
 ## 3.3 Privacidad diferencial agregando ruido Laplaciano a las consultas
 
-# Contamos casos de Arritmia
+### Contamos casos de Arritmia
 count_arritmia = (df['Diagnóstico'] == 'Arritmia').sum()
 
-# Parámetro de privacidad (epsilon)
+### Parámetro de privacidad (epsilon)
 epsilon = 1.0
 
-# Función para generar ruido laplaciano
+### Función para generar ruido laplaciano
 def ruido_laplaciano(scale):
     return np.random.laplace(0, scale)
 
-# Sensibilidad (en conteos es 1)
+### Sensibilidad (en conteos es 1)
 sensibilidad = 1
 
-# Agregamos ruido al conteo
+### Agregamos ruido al conteo
 ruido = ruido_laplaciano(sensibilidad / epsilon)
 count_arritmia_dp = count_arritmia + ruido
 
